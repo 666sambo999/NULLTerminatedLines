@@ -150,13 +150,10 @@ bool is_bin_number(const char str[])
 }
 bool is_hex_number(const char str[])
 {
-	int n = StringLength(str);
-	char* buffer = new char[n + 1] {};
-	for (int i = 0; i < n; i++)buffer[i] = str[i];
-	to_lower(buffer);
+	
 	for (int i = 0; str[i]; i++)
 	{
-		if (!(str[i] >= '0' && str[i] <= '9') ? cout << str[i] : cout << char(str[i] + 55))return false;
+		if (!(str[i] >= '0' && str[i] <= '10') && (str[i] >= 'A' && str[i] <= 'F'))return false;
 	}
 	return true;
 }
